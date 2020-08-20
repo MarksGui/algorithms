@@ -1,23 +1,18 @@
 package main
 
 import (
+	"algorithms/tree"
 	"fmt"
 )
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 // 递归方法
-func Recursive(root *TreeNode) []int {
+func Recursive(root *tree.TreeNode) []int {
 	res := make([]int, 0)
 	helper(root, &res)
 	return res
 }
 
-func helper(root *TreeNode, res *[]int) {
+func helper(root *tree.TreeNode, res *[]int) {
 	if root != nil {
 		if root.Left != nil {
 			helper(root.Left, res)
@@ -30,9 +25,9 @@ func helper(root *TreeNode, res *[]int) {
 }
 
 // 迭代处理
-func Iterating(root *TreeNode) []int {
+func Iterating(root *tree.TreeNode) []int {
 	res := make([]int, 0)
-	stack := make([]*TreeNode, 0)
+	stack := make([]*tree.TreeNode, 0)
 	curr := root
 	for curr != nil || len(stack) != 0 {
 		for curr != nil {
@@ -48,11 +43,11 @@ func Iterating(root *TreeNode) []int {
 }
 
 func main() {
-	var root = &TreeNode{
+	var root = &tree.TreeNode{
 		Val: 1,
-		Right: &TreeNode{
+		Right: &tree.TreeNode{
 			Val: 2,
-			Left: &TreeNode{
+			Left: &tree.TreeNode{
 				Val: 3,
 			},
 		},
