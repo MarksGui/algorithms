@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-// 递归方法
+// 二叉树的中序遍历（递归）
 func Recursive(root *tree.TreeNode) []int {
 	res := make([]int, 0)
 	helper(root, &res)
@@ -24,7 +24,7 @@ func helper(root *tree.TreeNode, res *[]int) {
 	}
 }
 
-// 迭代处理
+// 二叉树的中序遍历（迭代）
 func Iterating(root *tree.TreeNode) []int {
 	res := make([]int, 0)
 	stack := make([]*tree.TreeNode, 0)
@@ -43,15 +43,7 @@ func Iterating(root *tree.TreeNode) []int {
 }
 
 func main() {
-	var root = &tree.TreeNode{
-		Val: 1,
-		Right: &tree.TreeNode{
-			Val: 2,
-			Left: &tree.TreeNode{
-				Val: 3,
-			},
-		},
-	}
+	root := tree.CreateCompleteBinaryTree(0, []int{3, 9, 20, 0, 0, 15, 7})
 	fmt.Println(Recursive(root))
 	fmt.Println(Iterating(root))
 }
