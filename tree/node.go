@@ -16,7 +16,14 @@ type TreeNode struct {
 // i   数组的下标
 // arr 输入数组
 func CreateCompleteBinaryTree(i int, arr []int) *TreeNode {
-	t := &TreeNode{arr[i], nil, nil}
+	t := &TreeNode{}
+	if arr[i] != 0 {
+		t.Val = arr[i]
+	} else {
+		t = nil
+		return t
+	}
+
 	if i < len(arr) && 2*i+1 < len(arr) {
 		t.Left = CreateCompleteBinaryTree(2*i+1, arr)
 	}
@@ -24,5 +31,4 @@ func CreateCompleteBinaryTree(i int, arr []int) *TreeNode {
 		t.Right = CreateCompleteBinaryTree(2*i+2, arr)
 	}
 	return t
-
 }

@@ -30,14 +30,15 @@ func Iterating(root *tree.TreeNode) []int {
 	stack := make([]*tree.TreeNode, 0)
 	curr := root
 	for curr != nil || len(stack) != 0 {
-		for curr != nil {
+		if curr != nil {
 			stack = append(stack, curr)
 			curr = curr.Left
+		} else {
+			curr = stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+			res = append(res, curr.Val)
+			curr = curr.Right
 		}
-		curr = stack[len(stack)-1]
-		stack = stack[:len(stack)-1]
-		res = append(res, curr.Val)
-		curr = curr.Right
 	}
 	return res
 }
