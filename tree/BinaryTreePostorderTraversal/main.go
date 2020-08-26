@@ -24,6 +24,7 @@ func helper(root *tree.TreeNode, res *[]int) {
 	}
 }
 
+// 二叉树后续遍历（迭代）
 func PostorderTraversalIterating(root *tree.TreeNode) []int {
 	stack := make([]*tree.TreeNode, 0)
 	res := make([]int, 0)
