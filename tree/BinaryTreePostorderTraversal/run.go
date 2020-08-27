@@ -1,8 +1,7 @@
-package main
+package BinaryTreePostorderTraversal
 
 import (
 	"algorithms/tree"
-	"fmt"
 )
 
 // 二叉树后续遍历（递归）
@@ -47,17 +46,4 @@ func PostorderTraversalIterating(root *tree.TreeNode) []int {
 		}
 	}
 	return res
-}
-
-func main() {
-	//       3
-	//      / \
-	//     9  20
-	//       /  \
-	//      15   7
-	root := tree.CreateCompleteBinaryTree(0, []int{3, 9, 20, 0, 0, 15, 7})
-
-	fmt.Println(PostorderTraversalRecursive(root))
-	fmt.Println(PostorderTraversalIterating(root))
-
 }

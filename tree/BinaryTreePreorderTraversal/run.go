@@ -1,8 +1,7 @@
-package main
+package BinaryTreePreorderTraversal
 
 import (
 	"algorithms/tree"
-	"fmt"
 )
 
 // 二叉树前序遍历（递归）
@@ -46,16 +45,4 @@ func PreorderTraversalIterating(root *tree.TreeNode) []int {
 
 	}
 	return res
-}
-
-func main() {
-	//       3
-	//      / \
-	//     9  20
-	//       /  \
-	//      15   7
-	root := tree.CreateCompleteBinaryTree(0, []int{3, 9, 20, 0, 0, 15, 7})
-
-	fmt.Println(PreorderTraversalRecursive(root))
-	fmt.Println(PreorderTraversalIterating(root))
 }

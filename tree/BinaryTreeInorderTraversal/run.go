@@ -1,8 +1,7 @@
-package main
+package BinaryTreeInorderTraversal
 
 import (
 	"algorithms/tree"
-	"fmt"
 )
 
 // 二叉树的中序遍历（递归）
@@ -41,10 +40,4 @@ func Iterating(root *tree.TreeNode) []int {
 		}
 	}
 	return res
-}
-
-func main() {
-	root := tree.CreateCompleteBinaryTree(0, []int{3, 9, 20, 0, 0, 15, 7})
-	fmt.Println(Recursive(root))
-	fmt.Println(Iterating(root))
 }

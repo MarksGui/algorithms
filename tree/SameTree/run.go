@@ -1,4 +1,4 @@
-package main
+package SameTree
 
 import "algorithms/tree"
 
