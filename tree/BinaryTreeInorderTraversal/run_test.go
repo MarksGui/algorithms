@@ -30,7 +30,7 @@ func TestIterating(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := Iterating(tt.args.root); !reflect.DeepEqual(got, tt.want) {
+			if got := InorderTraversalIterating(tt.args.root); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("Iterating() = %v, want %v", got, tt.want)
 			}
 		})
@@ -56,7 +56,7 @@ func TestRecursive(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := Recursive(tt.args.root); !reflect.DeepEqual(got, tt.want) {
+			if got := InorderTraversalRecursive(tt.args.root); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("Recursive() = %v, want %v", got, tt.want)
 			}
 		})

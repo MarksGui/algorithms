@@ -5,7 +5,7 @@ import (
 )
 
 // 二叉树的中序遍历（递归）
-func Recursive(root *tree.TreeNode) []int {
+func InorderTraversalRecursive(root *tree.TreeNode) []int {
 	res := make([]int, 0)
 	helper(root, &res)
 	return res
@@ -24,7 +24,7 @@ func helper(root *tree.TreeNode, res *[]int) {
 }
 
 // 二叉树的中序遍历（迭代）
-func Iterating(root *tree.TreeNode) []int {
+func InorderTraversalIterating(root *tree.TreeNode) []int {
 	res := make([]int, 0)
 	stack := make([]*tree.TreeNode, 0)
 	curr := root
