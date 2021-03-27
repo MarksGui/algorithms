@@ -17,7 +17,7 @@ func TestMergeTreesRecursive(t *testing.T) {
 		want *tree.TreeNode
 	}{
 		{
-			name: "test",
+			name: "递归",
 			args: args{
 				t1: tree.CreateCompleteBinaryTree(0, []int{3, 9, 20, 0, 0, 15, 7}),
 				t2: tree.CreateCompleteBinaryTree(0, []int{3, 9, 20, 0, 0, 15, 7}),
