@@ -1,4 +1,4 @@
-package InvertBinaryTree_226
+package invert_binary_tree_226
 
 import (
 	"algorithms/tree"
@@ -51,7 +51,7 @@ func Test_invertTree1(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := invertTreeIterating(tt.args.root); !reflect.DeepEqual(got, tt.want) {
+			if got := invertTree(tt.args.root); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("invertTree() = %v, want %v", got, tt.want)
 			}
 		})

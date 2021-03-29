@@ -1,4 +1,4 @@
-package MergeTwoBinaryTrees
+package merge_two_binary_trees_617
 
 import (
 	"algorithms/tree"

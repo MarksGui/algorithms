@@ -1,4 +1,4 @@
-package PathSum
+package path_sum_112
 
 import "algorithms/tree"
 

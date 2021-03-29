@@ -6,6 +6,11 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+type NTreeNode struct {
+	Val      int
+	Children []*NTreeNode
+}
+
 //    3
 //   / \
 //  9  20

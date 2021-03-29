@@ -1,4 +1,4 @@
-package BinaryTreeInorderTraversal
+package binary_tree_inorder_traversal_94
 
 import (
 	"algorithms/tree"

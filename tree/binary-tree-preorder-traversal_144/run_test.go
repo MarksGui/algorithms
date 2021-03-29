@@ -1,4 +1,4 @@
-package BinaryTreeInorderTraversal
+package binary_tree_preorder_traversal_144
 
 import (
 	"algorithms/tree"
@@ -11,7 +11,7 @@ import (
 //     9  20
 //       /  \
 //      15   7
-func TestIterating(t *testing.T) {
+func TestPreorderTraversalIterating(t *testing.T) {
 	type args struct {
 		root *tree.TreeNode
 	}
@@ -25,19 +25,19 @@ func TestIterating(t *testing.T) {
 			args: args{
 				root: tree.CreateCompleteBinaryTree(0, []int{3, 9, 20, 0, 0, 15, 7}),
 			},
-			want: []int{9, 3, 15, 20, 7},
+			want: []int{3, 9, 20, 15, 7},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := InorderTraversalIterating(tt.args.root); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Iterating() = %v, want %v", got, tt.want)
+			if got := PreorderTraversalIterating(tt.args.root); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("PreorderTraversalIterating() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
 
-func TestRecursive(t *testing.T) {
+func TestPreorderTraversalRecursive(t *testing.T) {
 	type args struct {
 		root *tree.TreeNode
 	}
@@ -51,13 +51,13 @@ func TestRecursive(t *testing.T) {
 			args: args{
 				root: tree.CreateCompleteBinaryTree(0, []int{3, 9, 20, 0, 0, 15, 7}),
 			},
-			want: []int{9, 3, 15, 20, 7},
+			want: []int{3, 9, 20, 15, 7},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := InorderTraversalRecursive(tt.args.root); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Recursive() = %v, want %v", got, tt.want)
+			if got := PreorderTraversalRecursive(tt.args.root); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("PreorderTraversalRecursive() = %v, want %v", got, tt.want)
 			}
 		})
 	}

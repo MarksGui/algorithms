@@ -1,4 +1,4 @@
-package SymmetricTree
+package symmetric_tree_101
 
 import (
 	"algorithms/tree"

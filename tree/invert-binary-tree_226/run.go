@@ -1,4 +1,4 @@
-package InvertBinaryTree_226
+package invert_binary_tree_226
 
 import "algorithms/tree"
 

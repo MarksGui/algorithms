@@ -1,4 +1,4 @@
-package BinaryTreeZigzagLevelOrderTraversal
+package binary_tree_zigzag_level_order_traversal_103
 
 import (
 	"algorithms/tree"

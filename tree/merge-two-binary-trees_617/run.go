@@ -1,8 +1,8 @@
-package MergeTwoBinaryTrees
+package merge_two_binary_trees_617
 
 import "algorithms/tree"
 
-// 合并两颗二叉树（递归解法）
+// 合并二叉树（递归解法）
 func MergeTreesRecursive(t1 *tree.TreeNode, t2 *tree.TreeNode) *tree.TreeNode {
 	if t1 == nil {
 		return t2
