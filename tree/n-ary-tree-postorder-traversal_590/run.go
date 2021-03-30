@@ -26,12 +26,26 @@ func postorder(root *tree.NTreeNode) []int {
 	if root == nil {
 		return res
 	}
-
 	stack := []*tree.NTreeNode{root}
-
 	for len(stack) > 0 {
-
+		cur := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		res = append(res, cur.Val)
+		for _, child := range cur.Children {
+			if child != nil {
+				stack = append(stack, child)
+			}
+		}
 	}
 
+	res = reverse(res)
+
 	return res
+}
+
+func reverse(s []int) []int {
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		s[i], s[j] = s[j], s[i]
+	}
+	return s
 }
