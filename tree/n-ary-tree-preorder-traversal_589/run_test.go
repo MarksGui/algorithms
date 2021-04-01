@@ -1,4 +1,4 @@
-package n_ary_tree_postorder_traversal_590
+package n_ary_tree_preorder_traversal_589
 
 import (
 	"algorithms/tree"
@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func Test_postorderRecursive(t *testing.T) {
+func Test_preorder(t *testing.T) {
 	type args struct {
 		root *tree.NTreeNode
 	}
@@ -45,19 +45,19 @@ func Test_postorderRecursive(t *testing.T) {
 					},
 				},
 			},
-			want: []int{5, 6, 3, 2, 4, 1},
+			want: []int{1, 3, 5, 6, 2, 4},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := postorder(tt.args.root); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("postorderRecursive() = %v, want %v", got, tt.want)
+			if got := preorder(tt.args.root); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("preorder() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
 
-func Test_postorderRecursive1(t *testing.T) {
+func Test_preorderRecursive(t *testing.T) {
 	type args struct {
 		root *tree.NTreeNode
 	}
@@ -96,13 +96,13 @@ func Test_postorderRecursive1(t *testing.T) {
 					},
 				},
 			},
-			want: []int{5, 6, 3, 2, 4, 1},
+			want: []int{1, 3, 5, 6, 2, 4},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := postorderRecursive(tt.args.root); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("postorderRecursive() = %v, want %v", got, tt.want)
+			if got := preorderRecursive(tt.args.root); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("preorderRecursive() = %v, want %v", got, tt.want)
 			}
 		})
 	}
