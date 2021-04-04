@@ -1,21 +1,22 @@
-package maximum_depth_of_binary_tree
+package average_of_levels_in_binary_tree
 
-import (
-	"algorithms/tree"
-)
+import "algorithms/tree"
 
-// 二叉树的最大深度
-func maxDepth(root *tree.TreeNode) int {
-	var dep int
+// 二叉树的层平均值
+func averageOfLevels(root *tree.TreeNode) []float64 {
+	res := make([]float64, 0)
 	if root == nil {
-		return dep
+		return res
 	}
 	queue := []*tree.TreeNode{root}
+
 	for len(queue) > 0 {
 		count := len(queue)
+		var level int
 		for i := 0; i < count; i++ {
 			cur := queue[0]
 			queue = queue[1:]
+			level += cur.Val
 			if cur.Left != nil {
 				queue = append(queue, cur.Left)
 			}
@@ -23,8 +24,9 @@ func maxDepth(root *tree.TreeNode) int {
 				queue = append(queue, cur.Right)
 			}
 		}
-		dep++
+		avg := float64(level) / float64(count)
+		res = append(res, avg)
 	}
 
-	return dep
+	return res
 }
