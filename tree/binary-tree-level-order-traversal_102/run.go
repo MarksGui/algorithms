@@ -53,6 +53,33 @@ func levelOrderIterating(root *tree.TreeNode) [][]int {
 	return res
 }
 
+// 二叉树的层序遍历（迭代-广度优先）  优化
+func levelOrderIteratingNew(root *tree.TreeNode) [][]int {
+	res := [][]int{}
+	if root == nil {
+		return res
+	}
+
+	queue := []*tree.TreeNode{root}
+	for i := 0; len(queue) > 0; i++ {
+		res = append(res, []int{})
+		p := []*tree.TreeNode{}
+		for j := 0; j < len(queue); j++ {
+			cur := queue[j]
+			res[i] = append(res[i], cur.Val)
+			if cur.Left != nil {
+				p = append(p, cur.Left)
+			}
+			if cur.Right != nil {
+				p = append(p, cur.Right)
+			}
+		}
+		queue = p
+	}
+
+	return res
+}
+
 // 二叉树的层序遍历（迭代）
 // 使用内置 linked list
 func levelOrderIteratingL(root *tree.TreeNode) [][]int {

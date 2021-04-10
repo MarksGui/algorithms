@@ -65,7 +65,7 @@ func Test_levelOrderIteratingL(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := levelOrderIteratingL(tt.args.root); !reflect.DeepEqual(got, tt.want) {
+			if got := levelOrderIteratingNew(tt.args.root); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("levelOrderIteratingL() = %v, want %v", got, tt.want)
 			}
 		})
@@ -99,5 +99,19 @@ func Test_levelOrderRecursive(t *testing.T) {
 				t.Errorf("levelOrderRecursive() = %v, want %v", got, tt.want)
 			}
 		})
+	}
+}
+
+func Benchmark_LevelOrderIteratingNew(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		root := tree.CreateCompleteBinaryTree(0, []int{3, 9, 20, 0, 0, 15, 7})
+		levelOrderIteratingNew(root)
+	}
+}
+
+func Benchmark_LevelOrderIteratingL(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		root := tree.CreateCompleteBinaryTree(0, []int{3, 9, 20, 0, 0, 15, 7})
+		levelOrderIterating(root)
 	}
 }
